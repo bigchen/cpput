@@ -1,9 +1,6 @@
 #ifndef cpput_runner_h
 #define cpput_runner_h
 
-#include <iostream>
-#include <iomanip>
-#include <vector>
 #include "cpput_registry.h"
 #include "cpput_reporter.h"
 
@@ -30,26 +27,26 @@ public:
 
     void RunGroup(const std::string &group_name)
     {
-        TestRegistry::GroupMap::const_iterator gi = registry->GetGroups().find(group_name);
-        TestRegistry::GroupMap::const_iterator ge = registry->GetGroups().end();
+        TestRegistry::GroupMap::const_iterator group_iter = registry->GetGroups().find(group_name);
+        TestRegistry::GroupMap::const_iterator group_iter_end = registry->GetGroups().end();
 
         reporter->RunBegin();
 
-        if(gi != ge)
-            RunGroup_(gi);
+        if(group_iter != group_iter_end)
+            RunGroup_(group_iter);
 
         reporter->RunEnd();
     }
 
     void RunAllGroups()
     {
-        TestRegistry::GroupMap::const_iterator gi = registry->GetGroups().begin();
-        TestRegistry::GroupMap::const_iterator ge = registry->GetGroups().end();
+        TestRegistry::GroupMap::const_iterator group_iter = registry->GetGroups().begin();
+        TestRegistry::GroupMap::const_iterator group_iter_end = registry->GetGroups().end();
 
 		reporter->RunBegin();
 
-        for(; gi!=ge; ++gi)
-            RunGroup_(gi);
+        for(; group_iter != group_iter_end; ++group_iter)
+            RunGroup_(group_iter);
 
 		reporter->RunEnd();
     }
