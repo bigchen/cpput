@@ -13,7 +13,7 @@ struct GroupRegister
 {
     static void Register(GROUP &g)
     {
-		g.Register(N, static_cast<method>(&GROUP::template Test<N>));
+        g.Register(N, static_cast<method>(&GROUP::template Test<N>));
         GroupRegister<GROUP, N-1>::Register(g);
     }
 };
@@ -32,7 +32,7 @@ class TestGroup : public GroupBase, public CONTEXT
 public:
     TestGroup(const std::string &name) : GroupBase(name)
     {
-		TestRegistry::Instance()->RegisterGroup(group_name, this);
+        TestRegistry::Instance()->RegisterGroup(group_name, this);
         GroupRegister<TestGroup, MAX_TESTS>::Register(*this);
     }
 

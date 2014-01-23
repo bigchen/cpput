@@ -13,12 +13,12 @@ GROUP(Group3, "Group3 Test")
 
 GROUP_BEGIN(Group3)
 {
-	//do something
+    //do something
 }
 
 GROUP_END(Group3)
 {
-	//do something
+    //do something
 }
 
 TEST_BEGIN(Group3)
@@ -38,7 +38,7 @@ TEST(Group3, 1)
 
 TEST(Group3, 2)
 {
-	//etc.
+    //etc.
 }
 
 }

@@ -31,7 +31,7 @@ inline void EXPECT(bool cond)
 {
     if (!cond)
     {
-		throw Failure("Assert Failure!");
+        throw Failure("Assert Failure!");
     }
 }
 
@@ -39,7 +39,7 @@ inline void EXPECT(bool cond, const char *msg)
 {
     if (!cond)
     {
-		throw Failure(msg);
+        throw Failure(msg);
     }
 }
 

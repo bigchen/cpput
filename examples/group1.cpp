@@ -18,7 +18,7 @@ TEST(Group1, 1)
 
 TEST(Group1, 2)
 {
-	EXPECT(4 == my_sum(1, 2), "4 == my_sum(1, 2) error!");
+    EXPECT(4 == my_sum(1, 2), "4 == my_sum(1, 2) error!");
 }
 
 }
