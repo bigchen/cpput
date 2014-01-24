@@ -7,7 +7,6 @@ int my_sum3(int a, int b)
 
 namespace cpput
 {
-struct Group3 {};
 
 GROUP(Group3, "Group3 Test")
 

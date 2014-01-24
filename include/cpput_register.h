@@ -50,7 +50,8 @@ public:
 };
 
 
-#define GROUP(CONTEXT,NAME) cpput::TestGroup<CONTEXT> CONTEXT##group(NAME);
+#define GROUP(CONTEXT,NAME) \
+    struct CONTEXT {}; TestGroup<CONTEXT> CONTEXT##group(NAME);
 #define TEST(CONTEXT,N) template<> template<> \
         void TestGroup<CONTEXT>::Test<(N+4)>()
 #define GROUP_BEGIN(CONTEXT) template<> template<> \
